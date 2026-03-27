@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Inabomi Co., Ltd. specializes in DCS software modification, adjustment, and technical support for industrial plants. Based in Ome, Tokyo, we serve the control and instrumentation needs of industrial facilities.">
+
+    <meta property="og:title" content="Inabomi Co., Ltd. - DCS Software Modification & Instrumentation">
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="Focused on DCS software modification and technical support for industrial plant control and instrumentation.">
+    <meta property="og:url" content="https://inabomi.com/en/">
+    <meta property="og:image" content="https://inabomi.com/images/ogp.jpg">
+
+    <title>Inabomi Co., Ltd. - DCS Software Modification & Instrumentation</title>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="canonical" href="https://inabomi.com/en/">
+    <link rel="alternate" hreflang="ja" href="https://inabomi.com/">
+    <link rel="alternate" hreflang="en" href="https://inabomi.com/en/">
+    <link rel="alternate" hreflang="x-default" href="https://inabomi.com/">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Inabomi Co., Ltd. - DCS Software Modification & Instrumentation">
+    <meta name="twitter:description" content="Focused on DCS software modification and technical support for industrial plant control and instrumentation.">
+    <meta name="twitter:image" content="https://inabomi.com/images/ogp.jpg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --brand-navy: #0f2942;
+            --brand-blue: #1e5a8e;
+            --brand-blue-light: #2c7ab8;
+            --ink-primary: #0a1929;
+            --ink-secondary: #334e68;
+            --ink-tertiary: #64748b;
+            --surface-base: #ffffff;
+            --surface-raised: #f8fafc;
+            --surface-overlay: #e8eef4;
+            --accent-cta: #0066cc;
+            --accent-cta-hover: #0052a3;
+            --accent-border: #cbd5e1;
+            --accent-highlight: #dbeafe;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Outfit', 'Noto Sans JP', sans-serif;
+            background: var(--surface-base);
+            color: var(--ink-primary);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        header {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+            background: rgba(255,255,255,0.96);
+            backdrop-filter: blur(12px);
+            border-bottom: 2px solid var(--accent-border);
+            box-shadow: 0 2px 8px rgba(10,25,41,0.08);
+        }
+
+        nav {
+            max-width: 1400px; margin: 0 auto;
+            padding: 1.25rem 3rem;
+            display: flex; justify-content: space-between; align-items: center;
+        }
+
+        .logo {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1rem; font-weight: 700;
+            letter-spacing: 0.05em;
+            color: var(--ink-primary);
+            text-decoration: none;
+            display: flex; align-items: center; gap: 0.4rem;
+        }
+
+        .logo-lockup { display: inline-flex; align-items: baseline; gap: 6px; line-height: 1; }
+        .logo-inabomi {
+            font-size: clamp(28px, 2.4vw, 38px);
+            font-weight: 800; letter-spacing: -0.03em;
+            color: var(--brand-blue);
+        }
+        .logo-kabu {
+            font-size: clamp(13px, 1.1vw, 17px);
+            font-weight: 600; letter-spacing: 0em;
+            color: var(--brand-blue);
+        }
+
+        nav ul { display: flex; list-style: none; gap: 2.5rem; }
+        nav a { color: var(--ink-secondary); text-decoration: none; font-size: 0.95rem; font-weight: 600; transition: color 0.3s ease; position: relative; }
+        nav ul a:hover { color: var(--brand-blue); }
+        nav ul a::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 3px; background: var(--brand-blue); transition: width 0.3s ease; }
+        nav ul a:hover::after { width: 100%; }
+
+        .lang-switcher {
+            display: flex; align-items: center; gap: 0.4rem;
+            font-size: 0.85rem; font-weight: 600;
+            color: var(--ink-tertiary); white-space: nowrap; margin-left: 1rem;
+        }
+        .lang-switcher a { color: var(--ink-secondary); text-decoration: none; transition: color 0.3s ease; }
+        .lang-switcher a:hover { color: var(--brand-blue); }
+        .lang-switcher a.active { color: var(--brand-blue); pointer-events: none; }
+        .lang-switcher .sep { color: var(--accent-border); }
+
+        .mobile-menu-btn {
+            display: none; flex-direction: column; gap: 5px;
+            background: none; border: none; cursor: pointer; padding: 0.5rem;
+        }
+        .mobile-menu-btn span { width: 26px; height: 3px; background: var(--brand-navy); border-radius: 3px; transition: all 0.3s ease; }
+        .mobile-menu-btn.active span:nth-child(1) { transform: rotate(45deg) translate(8px,8px); }
+        .mobile-menu-btn.active span:nth-child(2) { opacity: 0; }
+        .mobile-menu-btn.active span:nth-child(3) { transform: rotate(-45deg) translate(7px,-6px); }
+
+        .mobile-menu {
+            display: none; position: fixed; top: 73px; left: 0; right: 0;
+            background: rgba(255,255,255,0.98); backdrop-filter: blur(12px);
+            border-bottom: 2px solid var(--accent-border);
+            box-shadow: 0 8px 16px rgba(10,25,41,0.12); z-index: 999;
+        }
+        .mobile-menu.active { display: block; }
+        .mobile-menu ul { display: flex; flex-direction: column; list-style: none; padding: 1rem; gap: 0; }
+        .mobile-menu ul li { border-bottom: 1px solid var(--accent-border); }
+        .mobile-menu ul li:last-child { border-bottom: none; }
+        .mobile-menu ul a { display: block; padding: 1.25rem 1rem; color: var(--ink-primary); text-decoration: none; font-size: 1rem; font-weight: 600; transition: all 0.3s ease; }
+        .mobile-menu ul a:hover { background: var(--surface-overlay); color: var(--brand-blue); padding-left: 1.5rem; }
+
+        .mobile-lang-switcher {
+            display: flex; justify-content: center; gap: 0.5rem;
+            padding: 1rem; font-size: 0.9rem; font-weight: 600;
+            border-top: 1px solid var(--accent-border);
+        }
+        .mobile-lang-switcher a { color: var(--ink-secondary); text-decoration: none; }
+        .mobile-lang-switcher a.active { color: var(--brand-blue); pointer-events: none; }
+
+        .hero {
+            min-height: 100vh; display: flex; align-items: center; justify-content: center;
+            position: relative; padding: 8rem 3rem 4rem;
+            background: linear-gradient(135deg, var(--surface-raised) 0%, var(--surface-base) 100%);
+            overflow: hidden;
+        }
+        .hero::before {
+            content: ''; position: absolute; top: -20%; right: -10%;
+            width: 600px; height: 600px;
+            background: radial-gradient(circle, rgba(30,90,142,0.08) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        .hero::after {
+            content: ''; position: absolute; bottom: -30%; left: -10%;
+            width: 500px; height: 500px;
+            background: radial-gradient(circle, rgba(30,90,142,0.06) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero-content { max-width: 1200px; text-align: center; position: relative; z-index: 1; }
+
+        .hero h1 {
+            font-size: clamp(38px, 4.0vw, 58px); font-weight: 800;
+            margin-bottom: 1.5rem; letter-spacing: -0.01em; line-height: 1.14;
+            color: var(--ink-primary);
+        }
+        .hero h1 .highlight {
+            color: var(--brand-blue); position: relative; display: inline-block; padding-bottom: 0.2em;
+        }
+        .hero h1 .highlight::after {
+            content: ''; position: absolute; bottom: 0; left: 0; right: 0;
+            height: 6px; background: linear-gradient(90deg, var(--brand-blue), var(--brand-blue-light)); border-radius: 3px;
+        }
+        .hero p { font-size: clamp(1.05rem, 2vw, 1.25rem); color: var(--ink-secondary); margin-bottom: 3rem; font-weight: 400; line-height: 1.8; }
+
+        .tagline {
+            font-family: 'Outfit', sans-serif; font-size: 0.85rem; color: var(--brand-blue);
+            letter-spacing: 0.25em; text-transform: uppercase; margin-bottom: 1.5rem; font-weight: 700;
+        }
+
+        .cta-button {
+            display: inline-block; padding: 1.125rem 3rem; background: var(--accent-cta);
+            color: white; text-decoration: none; border-radius: 50px; font-weight: 700;
+            font-size: 1.05rem; transition: all 0.3s ease;
+            box-shadow: 0 6px 20px rgba(0,102,204,0.3); letter-spacing: 0.05em;
+        }
+        .cta-button:hover { background: var(--accent-cta-hover); transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0,102,204,0.4); }
+
+        section { padding: 8rem 3rem; max-width: 1400px; margin: 0 auto; }
+
+        .section-header { text-align: center; margin-bottom: 5rem; }
+        .section-label { font-family: 'Outfit', sans-serif; font-size: 0.8rem; color: var(--brand-blue); letter-spacing: 0.25em; text-transform: uppercase; margin-bottom: 1rem; font-weight: 700; }
+        .section-header h2 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; margin-bottom: 1rem; color: var(--ink-primary); }
+        .section-header p { color: var(--ink-secondary); font-size: 1.1rem; max-width: 700px; margin: 0 auto; }
+
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
+
+        .service-card {
+            background: var(--surface-base); border: 2px solid var(--accent-border);
+            border-radius: 16px; padding: 2.5rem; transition: all 0.4s ease;
+            position: relative; overflow: hidden;
+        }
+        .service-card::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 5px;
+            background: linear-gradient(90deg, var(--brand-blue), var(--brand-blue-light));
+            transform: scaleX(0); transform-origin: left; transition: transform 0.4s ease;
+        }
+        .service-card:hover { transform: translateY(-10px); border-color: var(--brand-blue-light); box-shadow: 0 24px 48px rgba(30,90,142,0.15); }
+        .service-card:hover::before { transform: scaleX(1); }
+
+        .service-number {
+            display: inline-block; padding: 0.5rem 1.1rem;
+            background: var(--accent-highlight); color: var(--brand-blue);
+            border-radius: 8px; font-family: 'Outfit', sans-serif;
+            font-size: 0.85rem; font-weight: 700; margin-bottom: 1.5rem;
+        }
+        .service-card h3 { font-size: 1.4rem; margin-bottom: 1rem; font-weight: 700; color: var(--ink-primary); }
+        .service-card p { color: var(--ink-secondary); line-height: 1.8; font-size: 0.95rem; }
+
+        .company-section { background: var(--surface-raised); }
+        .company-content { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+        .info-grid { display: grid; gap: 1.5rem; }
+
+        .info-item {
+            background: var(--surface-base); padding: 1.75rem; border-radius: 12px;
+            border: 2px solid var(--accent-border); transition: all 0.3s ease;
+        }
+        .info-item:hover { border-color: var(--brand-blue-light); box-shadow: 0 6px 16px rgba(30,90,142,0.12); }
+        .info-label { font-size: 0.75rem; color: var(--brand-blue); margin-bottom: 0.5rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
+        .info-value { font-size: 1.05rem; color: var(--ink-primary); line-height: 1.8; font-weight: 600; }
+
+        .company-vision {
+            background: var(--surface-base); border: 2px solid var(--accent-border);
+            border-radius: 16px; padding: 3rem; position: relative; overflow: hidden;
+        }
+        .company-vision::before {
+            content: ''; position: absolute; top: 0; left: 0; width: 5px; height: 100%;
+            background: linear-gradient(180deg, var(--brand-blue), var(--brand-blue-light));
+        }
+        .company-vision h4 { font-size: 1.5rem; margin-bottom: 1.5rem; color: var(--ink-primary); font-weight: 700; }
+        .company-vision p { color: var(--ink-secondary); line-height: 2; margin-bottom: 1.5rem; }
+
+        .contact-container {
+            background: var(--surface-base); border: 2px solid var(--accent-border);
+            border-radius: 20px; padding: 4rem; max-width: 900px; margin: 0 auto;
+            box-shadow: 0 12px 40px rgba(10,25,41,0.08);
+        }
+        .contact-info { display: grid; gap: 2.5rem; }
+
+        .contact-item {
+            display: flex; align-items: start; gap: 2rem; padding: 2rem;
+            background: var(--surface-raised); border-radius: 12px;
+            transition: all 0.3s ease; border: 2px solid transparent;
+        }
+        .contact-item:hover { background: var(--accent-highlight); border-color: var(--brand-blue-light); transform: translateX(8px); }
+
+        .contact-icon {
+            width: 64px; height: 64px;
+            background: linear-gradient(135deg, var(--brand-blue), var(--brand-blue-light));
+            border-radius: 14px; display: flex; align-items: center; justify-content: center;
+            flex-shrink: 0; font-size: 1.6rem; box-shadow: 0 6px 20px rgba(30,90,142,0.25);
+        }
+        .contact-details h4 { font-size: 1.2rem; margin-bottom: 0.5rem; font-weight: 700; color: var(--ink-primary); }
+        .contact-details p { color: var(--ink-secondary); font-size: 1rem; line-height: 1.8; }
+
+        footer { background: var(--surface-raised); border-top: 2px solid var(--accent-border); padding: 3.5rem 3rem; }
+        .footer-content { max-width: 1400px; margin: 0 auto; text-align: center; }
+        .footer-links { display: flex; justify-content: center; gap: 2.5rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
+        .footer-links a { color: var(--ink-secondary); text-decoration: none; font-size: 0.95rem; font-weight: 600; transition: color 0.3s ease; }
+        .footer-links a:hover { color: var(--brand-blue); }
+        footer p { color: var(--ink-tertiary); font-size: 0.9rem; }
+
+        .modal {
+            display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%;
+            background-color: rgba(10,25,41,0.75); overflow-y: auto;
+        }
+        .modal-content {
+            background-color: var(--surface-base); margin: 3% auto; padding: 3.5rem;
+            width: 90%; max-width: 900px; border-radius: 20px;
+            box-shadow: 0 24px 80px rgba(10,25,41,0.4); border: 2px solid var(--accent-border);
+        }
+        .modal-close {
+            color: var(--ink-tertiary); float: right; font-size: 2.5rem; font-weight: 300;
+            line-height: 1; cursor: pointer; transition: color 0.3s ease; background: none; border: none; padding: 0;
+        }
+        .modal-close:hover, .modal-close:focus { color: var(--ink-primary); outline: 2px solid var(--brand-blue); outline-offset: 4px; }
+        .modal-content h2 { font-size: 2.2rem; margin-bottom: 2rem; color: var(--ink-primary); font-weight: 800; border-bottom: 4px solid var(--brand-blue); padding-bottom: 1rem; }
+
+        .privacy-content { color: var(--ink-primary); line-height: 1.9; }
+        .privacy-intro { font-size: 1.05rem; margin-bottom: 2.5rem; padding: 1.75rem; background: var(--surface-raised); border-radius: 10px; border-left: 5px solid var(--brand-blue); }
+        .privacy-section { margin-bottom: 2.5rem; }
+        .privacy-section h3 { font-size: 1.2rem; margin-bottom: 1rem; color: var(--brand-blue); font-weight: 700; }
+        .privacy-section p { margin-bottom: 1rem; color: var(--ink-secondary); }
+        .privacy-section ul { margin-left: 1.5rem; margin-bottom: 1rem; }
+        .privacy-section li { margin-bottom: 0.5rem; color: var(--ink-secondary); line-height: 1.8; }
+
+        .contact-box { background: var(--surface-raised); padding: 1.75rem; border-radius: 10px; margin-top: 1rem; border-left: 5px solid var(--brand-blue); }
+        .contact-box p { margin-bottom: 0.5rem; color: var(--ink-primary); }
+
+        .privacy-date { text-align: right; margin-top: 3rem; padding-top: 2rem; border-top: 2px solid var(--accent-border); color: var(--ink-tertiary); font-size: 0.95rem; }
+
+        .privacy-section-page { background: var(--surface-raised); border-top: 2px solid var(--accent-border); }
+        .privacy-page-content { max-width: 800px; margin: 0 auto; color: var(--ink-primary); line-height: 1.9; }
+        .privacy-page-content .privacy-section { margin-bottom: 2rem; }
+        .privacy-page-content h3 { font-size: 1rem; font-weight: 700; color: var(--ink-primary); margin-bottom: 0.75rem; padding-bottom: 0.4rem; border-bottom: 1px solid var(--accent-border); }
+        .privacy-page-content ul { padding-left: 1.5rem; color: var(--ink-secondary); }
+        .privacy-page-content .privacy-intro { margin-bottom: 2rem; color: var(--ink-secondary); }
+        .privacy-page-content .privacy-date { margin-top: 2.5rem; font-size: 0.9rem; color: var(--ink-tertiary); line-height: 1.8; }
+
+        .map-link-wrap { margin-top: 10px; display: block; }
+        .map-link { display: inline-flex; align-items: center; gap: 6px; font-weight: 800; text-decoration: none; color: var(--brand-blue); }
+        .map-link:hover { text-decoration: underline; }
+        .map-link--contact { margin-top: 10px; }
+
+        .addr-building { white-space: nowrap; }
+
+        .email-details { margin-top: 6px; }
+        .email-details > summary { list-style: none; }
+        .email-details > summary::-webkit-details-marker { display: none; }
+        .email-summary { display: inline-flex; align-items: center; cursor: pointer; font-weight: 800; color: var(--brand-blue); text-decoration: underline; text-underline-offset: 4px; }
+        .email-revealed { margin-top: 10px; }
+        .email-mailto { font-weight: 800; color: rgba(15,23,42,.86); word-break: break-all; text-decoration: none; }
+        .email-mailto:hover { text-decoration: underline; }
+
+        @media (max-width: 968px) {
+            nav { padding: 1.25rem 2rem; }
+            nav ul { gap: 2rem; }
+            .hero { padding: 6rem 2rem 3rem; }
+            section { padding: 5rem 2rem; }
+            .company-content { grid-template-columns: 1fr; gap: 3rem; }
+            .services-grid { grid-template-columns: 1fr; }
+            .contact-container { padding: 2.5rem; }
+            .contact-item { flex-direction: column; text-align: center; align-items: center; }
+        }
+        @media (max-width: 640px) {
+            nav ul { display: none; }
+            .lang-switcher { display: none; }
+            .mobile-menu-btn { display: flex; }
+            .hero h1 { font-size: 2rem; }
+            .hero p { font-size: 1rem; }
+            .contact-item { padding: 1.5rem; gap: 1rem; }
+            .modal-content { padding: 2rem; }
+        }
+        @media (max-width: 480px) {
+            .logo-inabomi { font-size: 26px; }
+            .logo-kabu { font-size: 13px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/en/" class="logo">
+                <span class="logo-lockup" aria-label="Inabomi Co., Ltd.">
+                    <span class="logo-inabomi">Inabomi</span>
+                    <span class="logo-kabu">Co., Ltd.</span>
+                </span>
+            </a>
+            <ul>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#company">Company</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#privacy">Privacy Policy</a></li>
+            </ul>
+            <button class="mobile-menu-btn" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu">
+                <span></span><span></span><span></span>
+            </button>
+            <div class="lang-switcher">
+                <a href="/">日本語</a>
+                <span class="sep">|</span>
+                <a href="/en/" class="active">English</a>
+            </div>
+        </nav>
+        <div class="mobile-menu" id="mobile-menu">
+            <ul>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#company">Company</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#privacy">Privacy Policy</a></li>
+            </ul>
+            <div class="mobile-lang-switcher">
+                <a href="/">日本語</a>
+                <span>|</span>
+                <a href="/en/" class="active">English</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="tagline">Industrial Control Systems</div>
+            <h1>Designing <span class="highlight">Reliability</span><br>for Plant Control</h1>
+            <p>We focus on DCS software modification, adjustment, and technical support,<br>serving the control and instrumentation needs of industrial plants.</p>
+            <a href="#contact" class="cta-button">Contact Us</a>
+        </div>
+    </section>
+
+    <section id="services">
+        <div class="section-header">
+            <div class="section-label">Services</div>
+            <h2>Our Services</h2>
+            <p>Centered on DCS software modification, we provide technical support and related services for plant control and instrumentation.</p>
+        </div>
+
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-number">01</div>
+                <h3>DCS Software Modification & Technical Support</h3>
+                <p>Our core service is DCS (Distributed Control System) software modification, adjustment, and technical support for industrial plants. For related plant design, fabrication, or PLC work, we consider each request based on project requirements.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-number">02</div>
+                <h3>Instrumentation Design & Consulting</h3>
+                <p>We provide instrumentation design for plant facilities and technical consulting for related inquiries.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-number">03</div>
+                <h3>DCS-Related Software Support</h3>
+                <p>We provide supplementary software development and modification support related to DCS systems.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-number">04</div>
+                <h3>Control & Instrumentation Support</h3>
+                <p>We offer support services related to control and instrumentation work. Depending on scope, we can coordinate with partner companies to meet project needs.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-number">05</div>
+                <h3>Data Center Control Systems <span style="font-size:0.8em;font-weight:400;color:var(--ink-tertiary);">(New Initiative)</span></h3>
+                <p>We are expanding into control systems for data center power, cooling, and facility monitoring. This is a new area where we are applying our industrial control expertise.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="company" class="company-section">
+        <div class="section-header">
+            <div class="section-label">Company</div>
+            <h2>Company Profile</h2>
+        </div>
+
+        <div class="company-content">
+            <div class="company-info">
+                <div class="info-grid">
+                    <div class="info-item">
+                        <div class="info-label">Company Name</div>
+                        <div class="info-value">Inabomi Co., Ltd.<br><span style="font-size:0.85rem;font-weight:400;color:var(--ink-tertiary);">(イナボミ株式会社)</span></div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-label">Address</div>
+                        <div class="info-value">Tomi Tower 401, 10-6-1 Kawabecho,<br>Ome, Tokyo 198-0036, Japan
+                            <div class="map-link-wrap">
+                                <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9D%92%E6%A2%85%E5%B8%82%E6%B2%B3%E8%BE%BA%E7%94%BA10%E4%B8%81%E7%9B%AE6-1" target="_blank" rel="noopener noreferrer">View on Map →</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-label">Established</div>
+                        <div class="info-value">March 2026</div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-label">Capital</div>
+                        <div class="info-value">JPY 7.5 million</div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-label">Officers</div>
+                        <div class="info-value">
+                            Representative Director: Sho Hosoya<br>
+                            Director / Chief Engineer: Joji Tsunoda
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-label">Business Hours</div>
+                        <div class="info-value">Mon–Fri, 9:00–17:00<br>(Excluding weekends and public holidays)</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="company-vision">
+                <h4>Our Approach</h4>
+                <p>Our focus is on DCS software modification and instrumentation-related support. We aim to provide practical, field-appropriate solutions that match each client's plant environment.</p>
+                <p>As a small but technically focused team, we prioritize careful communication and reliable quality in every engagement.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="section-header">
+            <div class="section-label">Contact</div>
+            <h2>Contact Us</h2>
+            <p>For inquiries regarding DCS software modification or instrumentation design, please feel free to reach out.</p>
+        </div>
+
+        <div class="contact-container">
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    </div>
+                    <div class="contact-details">
+                        <h4>Office Address</h4>
+                        <p>Tomi Tower 401, 10-6-1 Kawabecho,<br>Ome, Tokyo 198-0036, Japan<br><br>
+                            <a class="map-link map-link--contact" href="https://www.google.com/maps/search/?api=1&query=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9D%92%E6%A2%85%E5%B8%82%E6%B2%B3%E8%BE%BA%E7%94%BA10%E4%B8%81%E7%9B%AE6-1" target="_blank" rel="noopener noreferrer">View on Map →</a>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
+                    </div>
+                    <div class="contact-details">
+                        <h4>Email</h4>
+                        <details class="email-details">
+                            <summary class="email-summary">Show email address</summary>
+                            <div class="email-revealed">
+                                <a class="email-mailto" href="mailto:info@inabomi.com">info@inabomi.com</a>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
+                    </div>
+                    <div class="contact-details">
+                        <h4>Business Hours</h4>
+                        <p>Mon–Fri, 9:00–17:00<br>(Excluding weekends and public holidays)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="privacy" class="privacy-section-page">
+        <div class="section-header">
+            <div class="section-label">Privacy Policy</div>
+            <h2>Privacy Policy</h2>
+        </div>
+        <div class="privacy-page-content">
+            <p class="privacy-intro">Inabomi Co., Ltd. (hereinafter "the Company") recognizes the protection of personal information as an important responsibility and has established the following Privacy Policy to ensure appropriate handling and protection.</p>
+
+            <section class="privacy-section"><h3>1. Definition of Personal Information</h3><p>Personal information refers to information about an individual that can identify a specific person through name, date of birth, or other descriptors contained therein, or that includes personal identification codes.</p></section>
+
+            <section class="privacy-section"><h3>2. Collection of Personal Information</h3><p>The Company may collect personal information to the extent necessary for the following purposes:</p><ul><li>Responding to inquiries</li><li>Providing and improving services</li><li>Fulfilling contracts</li><li>After-service and maintenance support</li><li>Providing information on new services and technical updates</li></ul></section>
+
+            <section class="privacy-section"><h3>3. Purpose of Use</h3><p>The Company uses collected personal information for the following purposes:</p><ul><li>Providing DCS software modification and technical support services</li><li>Providing instrumentation design and related consulting</li><li>Responding to inquiries and consultations</li><li>Concluding, performing, and managing contracts</li><li>Issuing invoices and managing payments</li><li>Sending various notices and information</li></ul></section>
+
+            <section class="privacy-section"><h3>4. Third-Party Provision</h3><p>The Company will not provide personal information to third parties without the individual's consent, except in the following cases:</p><ul><li>When required by law</li><li>When necessary to protect life, body, or property, and obtaining consent is difficult</li><li>When necessary for public health or the sound development of children, and obtaining consent is difficult</li><li>When cooperating with national or local government agencies in their legally mandated duties, and obtaining consent may impede those duties</li></ul></section>
+
+            <section class="privacy-section"><h3>5. Management of Personal Information</h3><p>The Company maintains the accuracy of personal information and manages it securely, taking necessary and appropriate security measures to prevent unauthorized access, loss, destruction, falsification, or leakage.</p></section>
+
+            <section class="privacy-section"><h3>6. Disclosure, Correction, and Deletion</h3><p>Individuals may request disclosure, correction, addition, deletion, suspension of use, erasure, or cessation of third-party provision of their personal information held by the Company. Identity verification will be required for such requests.</p></section>
+
+            <section class="privacy-section"><h3>7. Use of Cookies</h3><p>Our website may use cookies to improve services and convenience. Cookies can be disabled through browser settings if preferred.</p></section>
+
+            <section class="privacy-section"><h3>8. Use of SSL</h3><p>SSL technology is used when personal information is entered to prevent interception, interference, or tampering.</p></section>
+
+            <section class="privacy-section"><h3>9. Changes to This Policy</h3><p>The Company may revise this Privacy Policy in response to changes in laws or business content. Revised policies take effect upon publication on this website.</p></section>
+
+            <section class="privacy-section"><h3>10. Contact</h3><p>For inquiries regarding the handling of personal information, please contact:</p>
+                <div class="contact-box">
+                    <p><strong>Inabomi Co., Ltd.</strong></p>
+                    <p>Tomi Tower 401, 10-6-1 Kawabecho, Ome, Tokyo 198-0036, Japan</p>
+                    <p>Email: info@inabomi.com</p>
+                    <p>Business Hours: Mon–Fri, 9:00–17:00 (Excluding weekends and public holidays)</p>
+                </div>
+            </section>
+
+            <p class="privacy-date">Established: March 1, 2026<br>Inabomi Co., Ltd.<br>Representative Director: Sho Hosoya</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#services">Services</a>
+                <a href="#company">Company</a>
+                <a href="#contact">Contact</a>
+                <a href="#privacy">Privacy Policy</a>
+            </div>
+            <p>&copy; 2026 Inabomi Co., Ltd. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <div id="privacy-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="privacy-title" aria-hidden="true">
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close">&times;</button>
+            <h2 id="privacy-title">Privacy Policy</h2>
+            <div class="privacy-content">
+                <p class="privacy-intro">Inabomi Co., Ltd. (hereinafter "the Company") recognizes the protection of personal information as an important responsibility and has established the following Privacy Policy to ensure appropriate handling and protection.</p>
+                <section class="privacy-section"><h3>1. Definition of Personal Information</h3><p>Personal information refers to information about an individual that can identify a specific person through name, date of birth, or other descriptors, or that includes personal identification codes.</p></section>
+                <section class="privacy-section"><h3>2. Collection of Personal Information</h3><p>The Company may collect personal information for the following purposes:</p><ul><li>Responding to inquiries</li><li>Providing and improving services</li><li>Fulfilling contracts</li><li>After-service and maintenance support</li><li>Providing information on new services</li></ul></section>
+                <section class="privacy-section"><h3>3. Purpose of Use</h3><p>Collected personal information is used for:</p><ul><li>Providing DCS software modification and technical support services</li><li>Providing instrumentation design and related consulting</li><li>Responding to inquiries</li><li>Contract management</li><li>Invoicing and payment management</li><li>Sending notices and information</li></ul></section>
+                <section class="privacy-section"><h3>4. Third-Party Provision</h3><p>Personal information will not be provided to third parties without consent, except as required by law or other legally defined circumstances.</p></section>
+                <section class="privacy-section"><h3>5. Management</h3><p>The Company takes appropriate security measures to prevent unauthorized access, loss, destruction, falsification, or leakage of personal information.</p></section>
+                <section class="privacy-section"><h3>6. Disclosure & Correction</h3><p>Individuals may request disclosure, correction, or deletion of their personal information. Identity verification will be required.</p></section>
+                <section class="privacy-section"><h3>7. Cookies</h3><p>This website may use cookies to improve services. Cookies can be disabled in browser settings.</p></section>
+                <section class="privacy-section"><h3>8. SSL</h3><p>SSL encryption is used to protect personal information during transmission.</p></section>
+                <section class="privacy-section"><h3>9. Changes</h3><p>This policy may be revised. Changes take effect upon publication on this website.</p></section>
+                <section class="privacy-section"><h3>10. Contact</h3><p>For privacy-related inquiries:</p>
+                    <div class="contact-box">
+                        <p><strong>Inabomi Co., Ltd.</strong></p>
+                        <p>Tomi Tower 401, 10-6-1 Kawabecho, Ome, Tokyo 198-0036, Japan</p>
+                        <p>Email: info@inabomi.com</p>
+                    </div>
+                </section>
+                <p class="privacy-date">Established: March 1, 2026<br>Inabomi Co., Ltd.<br>Representative Director: Sho Hosoya</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        (function() {
+            'use strict';
+
+            // JS enabled: hide page privacy section, use modal instead
+            var privacyPageSection = document.getElementById('privacy');
+            if (privacyPageSection) { privacyPageSection.style.display = 'none'; }
+
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const mobileMenu = document.querySelector('.mobile-menu');
+
+            if (mobileMenuBtn && mobileMenu) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    const isExpanded = this.classList.toggle('active');
+                    mobileMenu.classList.toggle('active');
+                    this.setAttribute('aria-expanded', isExpanded);
+                    document.body.style.overflow = isExpanded ? 'hidden' : '';
+                });
+                mobileMenu.querySelectorAll('a').forEach(function(link) {
+                    link.addEventListener('click', function() {
+                        mobileMenuBtn.classList.remove('active');
+                        mobileMenu.classList.remove('active');
+                        mobileMenuBtn.setAttribute('aria-expanded', 'false');
+                        document.body.style.overflow = '';
+                    });
+                });
+            }
+
+            let lastFocusedElement = null;
+            const modal = document.getElementById('privacy-modal');
+            const closeBtn = modal ? modal.querySelector('.modal-close') : null;
+            const focusableSelector = 'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
+
+            function trapFocus(element) {
+                element.addEventListener('keydown', function(e) {
+                    if (e.key !== 'Tab') return;
+                    const focusableElements = element.querySelectorAll(focusableSelector);
+                    const firstFocusable = focusableElements[0];
+                    const lastFocusable = focusableElements[focusableElements.length - 1];
+                    if (e.shiftKey && document.activeElement === firstFocusable) { lastFocusable.focus(); e.preventDefault(); }
+                    else if (!e.shiftKey && document.activeElement === lastFocusable) { firstFocusable.focus(); e.preventDefault(); }
+                });
+            }
+
+            function openModal() {
+                if (!modal) return;
+                lastFocusedElement = document.activeElement;
+                modal.style.display = 'block';
+                modal.setAttribute('aria-hidden', 'false');
+                document.body.style.overflow = 'hidden';
+                setTimeout(function() { if (closeBtn) closeBtn.focus(); }, 100);
+            }
+
+            function closeModal() {
+                if (!modal) return;
+                modal.style.display = 'none';
+                modal.setAttribute('aria-hidden', 'true');
+                document.body.style.overflow = '';
+                if (lastFocusedElement) lastFocusedElement.focus();
+            }
+
+            document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+                anchor.addEventListener('click', function(e) {
+                    if (this.getAttribute('href') === '#privacy') { e.preventDefault(); openModal(); }
+                });
+            });
+
+            if (closeBtn) closeBtn.addEventListener('click', closeModal);
+            if (modal) {
+                modal.addEventListener('click', function(e) { if (e.target === modal) closeModal(); });
+                trapFocus(modal);
+            }
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && modal && modal.style.display === 'block') closeModal();
+            });
+
+            if ('IntersectionObserver' in window) {
+                const observer = new IntersectionObserver(function(entries) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) { entry.target.classList.add('is-visible'); observer.unobserve(entry.target); }
+                    });
+                }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+                document.querySelectorAll('.service-card, .info-item, .contact-item, .tagline').forEach(function(el) { observer.observe(el); });
+            }
+        })();
+    </script>
+</body>
+</html>
