@@ -4,21 +4,24 @@
     <meta charset="UTF-8">
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="イナボミ株式会社は、プラント制御システムの設計・開発（DCS/PLC）から保守までを一貫して行う技術者集団です。東京都青梅市を拠点に、産業インフラの信頼性を支えます。">
+    <meta name="description" content="イナボミ株式会社は、DCSソフトウェアの改造・調整・技術支援を主軸に、計装設計および関連業務支援を行う技術会社です。東京都青梅市を拠点に、産業プラントの安定稼働を支援します。">
     
-    <meta property="og:title" content="イナボミ株式会社 - プラント制御システムの設計・開発">
+    <meta property="og:title" content="イナボミ株式会社 - DCSソフトウェア改造・計装設計">
     <meta property="og:type" content="website">
-    <meta property="og:description" content="DCS・PLCシステムの設計から保守まで、確かな技術力で産業プラントを支えます。">
-    <meta property="og:url" content="https://inabomi.com">
+    <meta property="og:description" content="DCSソフトウェアの改造・技術支援を中心に、産業プラントの制御・計装分野に対応します。">
+    <meta property="og:url" content="https://inabomi.com/">
     <meta property="og:image" content="https://inabomi.com/images/ogp.jpg">
     
-    <title>イナボミ株式会社 - プラント制御システムの設計・開発</title>
+    <title>イナボミ株式会社 - DCSソフトウェア改造・計装設計</title>
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <link rel="canonical" href="https://inabomi.com/">
+    <link rel="alternate" hreflang="ja" href="https://inabomi.com/">
+    <link rel="alternate" hreflang="en" href="https://inabomi.com/en/">
+    <link rel="alternate" hreflang="x-default" href="https://inabomi.com/">
     
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="イナボミ株式会社 - プラント制御システムの設計・開発">
-    <meta name="twitter:description" content="DCS・PLCシステムの設計から保守まで、確かな技術力で産業プラントを支えます。">
+    <meta name="twitter:title" content="イナボミ株式会社 - DCSソフトウェア改造・計装設計">
+    <meta name="twitter:description" content="DCSソフトウェアの改造・技術支援を中心に、産業プラントの制御・計装分野に対応します。">
     <meta name="twitter:image" content="https://inabomi.com/images/ogp.jpg">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -767,6 +770,7 @@
 
         @media (max-width: 640px) {
             nav ul { display: none; }
+            .lang-switcher { display: none; }
             .mobile-menu-btn { display: flex; }
 .hero h1 { font-size: 2rem; }
             .hero p { font-size: 1rem; }
@@ -854,12 +858,103 @@
 /* Address: keep building name together on mobile (avoid 'ト' orphan) */
 .addr-building{ white-space: nowrap; }
 
+.lang-switcher {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--ink-tertiary);
+    white-space: nowrap;
+}
+
+.lang-switcher a {
+    color: var(--ink-secondary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.lang-switcher a:hover {
+    color: var(--brand-blue);
+}
+
+.lang-switcher a.active {
+    color: var(--brand-blue);
+    pointer-events: none;
+}
+
+.lang-switcher .sep {
+    color: var(--accent-border);
+}
+
+.mobile-lang-switcher {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border-top: 1px solid var(--accent-border);
+}
+
+.mobile-lang-switcher a {
+    color: var(--ink-secondary);
+    text-decoration: none;
+}
+
+.mobile-lang-switcher a.active {
+    color: var(--brand-blue);
+    pointer-events: none;
+}
+
+.privacy-section-page {
+    background: var(--surface-raised);
+    border-top: 2px solid var(--accent-border);
+}
+
+.privacy-page-content {
+    max-width: 800px;
+    margin: 0 auto;
+    color: var(--ink-primary);
+    line-height: 1.9;
+}
+
+.privacy-page-content .privacy-section {
+    margin-bottom: 2rem;
+}
+
+.privacy-page-content h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--ink-primary);
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid var(--accent-border);
+}
+
+.privacy-page-content ul {
+    padding-left: 1.5rem;
+    color: var(--ink-secondary);
+}
+
+.privacy-page-content .privacy-intro {
+    margin-bottom: 2rem;
+    color: var(--ink-secondary);
+}
+
+.privacy-page-content .privacy-date {
+    margin-top: 2.5rem;
+    font-size: 0.9rem;
+    color: var(--ink-tertiary);
+    line-height: 1.8;
+}
+
 </style>
 </head>
 <body>
     <header>
         <nav>
-            <a href="#" class="logo">
+            <a href="/" class="logo">
                 <span class="logo-lockup" aria-label="イナボミ株式会社"><span class="logo-inabomi">イナボミ</span><span class="logo-kabu">株式会社</span></span></a>
             <ul>
                 <li><a href="#services">事業内容</a></li>
@@ -872,6 +967,11 @@
                 <span></span>
                 <span></span>
             </button>
+            <div class="lang-switcher" style="margin-left:1rem;">
+                <a href="/" class="active">日本語</a>
+                <span class="sep">|</span>
+                <a href="/en/">English</a>
+            </div>
         </nav>
         <div class="mobile-menu" id="mobile-menu">
             <ul>
@@ -880,6 +980,11 @@
                 <li><a href="#contact">お問い合わせ</a></li>
                 <li><a href="#privacy">プライバシーポリシー</a></li>
             </ul>
+            <div class="mobile-lang-switcher">
+                <a href="/" class="active">日本語</a>
+                <span>|</span>
+                <a href="/en/">English</a>
+            </div>
         </div>
     </header>
 
@@ -887,7 +992,7 @@
         <div class="hero-content">
             <div class="tagline">Industrial Control Systems</div>
             <h1>プラント制御の<br><span class="highlight">信頼性</span>を設計する</h1>
-            <p>DCS・PLCシステムの設計から保守まで、<br>確かな技術力で産業プラントを支えます</p>
+            <p>DCSソフトウェアの改造・調整・技術支援を中心に、<br>産業プラントの制御・計装分野を支援します</p>
             <a href="#contact" class="cta-button">お問い合わせ</a>
         </div>
     </section>
@@ -896,32 +1001,38 @@
         <div class="section-header">
             <div class="section-label">Services</div>
             <h2>事業内容</h2>
-            <p>プラント制御システムの設計・開発から保守まで、包括的なソリューションを提供します</p>
+            <p>DCSソフトウェア改造を主軸に、計装設計・業務支援および関連分野への対応を行います</p>
         </div>
 
         <div class="services-grid">
             <div class="service-card">
                 <div class="service-number">01</div>
-                <h3>制御システム設計・開発</h3>
-                <p>DCS（分散制御システム）、PLC（プログラマブルロジックコントローラ）などのプラント向け制御システムの設計・開発・保守を行います。</p>
+                <h3>DCSソフトウェア改造・技術支援</h3>
+                <p>DCS（分散制御システム）のソフトウェア改造・調整および技術支援を主軸としています。関連する設計・製作やPLC対応については、内容に応じて対応を検討します。</p>
             </div>
 
             <div class="service-card">
                 <div class="service-number">02</div>
                 <h3>計装設計・コンサルティング</h3>
-                <p>プラント設備の計装設計および技術コンサルティングサービスを提供し、最適なシステム構築をサポートします。</p>
+                <p>プラント設備の計装設計および関連する技術的なご相談に対応します。</p>
             </div>
 
             <div class="service-card">
                 <div class="service-number">03</div>
-                <h3>ソフトウェア開発</h3>
-                <p>産業用ソフトウェアの開発・販売・保守を通じて、業務効率化を実現します。</p>
+                <h3>DCS関連ソフトウェア補助開発・改造支援</h3>
+                <p>DCS改造に付随するソフトウェアの補助的な開発・改造支援を行います。</p>
             </div>
 
             <div class="service-card">
                 <div class="service-number">04</div>
-                <h3>システム構築・保守</h3>
-                <p>電気機器、制御装置、電子部品の販売・据付・保守、情報処理システム構築に関する総合的なサービスを提供します。</p>
+                <h3>制御・計装業務支援</h3>
+                <p>制御・計装業務に関連する支援を行います。対応範囲に応じて、協力会社との連携により柔軟に対応可能です。</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-number">05</div>
+                <h3>データセンター向け制御システム（新規展開）</h3>
+                <p>データセンターの電力・空調・設備監視向けの制御システム分野への展開を進めています。プラント制御で培った技術を活かし、新たな領域に取り組んでいます。</p>
             </div>
         </div>
     </section>
@@ -960,8 +1071,8 @@
                     </div>
 
                     <div class="info-item">
-                        <div class="info-label">代表者</div>
-                        <div class="info-value">代表取締役 細谷 祥</div>
+                        <div class="info-label">役員</div>
+                        <div class="info-value">代表取締役 細谷 祥<br><small style="font-weight:400;color:var(--ink-tertiary);">（吉澤 祥）</small><br>取締役 チーフエンジニア 角田 譲施</div>
                     </div>
 
                     <div class="info-item">
@@ -973,8 +1084,8 @@
 
             <div class="company-vision">
                 <h4>私たちのミッション</h4>
-                <p>産業プラントの安全性と効率性を支える制御システムの分野で、確かな技術力と豊富な経験を活かし、お客様の課題解決に貢献します。</p>
-                <p>長年培ってきた専門知識と最新技術を組み合わせ、信頼性の高いシステムを提供し続けることで、日本の産業インフラを支えます。</p>
+                <p>DCSソフトウェア改造・計装関連支援の分野で、お客様の現場に合った実用的な対応を行うことを基本方針としています。</p>
+                <p>小規模ながら技術に専念できる体制を活かし、丁寧な対応と確かな品質でご要望にお応えします。</p>
             </div>
         </div>
     </section>
@@ -983,13 +1094,13 @@
         <div class="section-header">
             <div class="section-label">Contact</div>
             <h2>お問い合わせ</h2>
-            <p>制御システムに関するご相談は、お気軽にお問い合わせください</p>
+            <p>DCSソフトウェア改造・計装設計に関するご相談は、お気軽にお問い合わせください</p>
         </div>
 
         <div class="contact-container">
             <div class="contact-info">
                 <div class="contact-item">
-                    <div class="contact-icon">📍</div>
+                    <div class="contact-icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
                     <div class="contact-details">
                         <h4>本社所在地</h4>
                         <p>〒198-0036<br>東京都青梅市河辺町10丁目6-1 <span class="addr-building">トミタワー 401</span><br><br><a class="map-link map-link--contact" href="https://www.google.com/maps/search/?api=1&query=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9D%92%E6%A2%85%E5%B8%82%E6%B2%B3%E8%BE%BA%E7%94%BA10%E4%B8%81%E7%9B%AE6-1" target="_blank" rel="noopener noreferrer">地図を開く →</a></p>
@@ -997,26 +1108,47 @@
                 </div>
 
                 <div class="contact-item">
-                    <div class="contact-icon">✉️</div>
+                <div class="contact-icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg></div>
                     <div class="contact-details">
                         <h4>メールでのお問い合わせ</h4>
                         <details class="email-details">
   <summary class="email-summary">メールアドレスを表示</summary>
   <div class="email-revealed">
-    <a class="email-mailto" href="mailto:info@inabomi.com">info@inabomi.com</a>
+    <a class="email-mailto" href="/cdn-cgi/l/email-protection#0a63646c654a63646b6865676324696567"><span class="__cf_email__" data-cfemail="deb7b0b8b19eb7b0bfbcb1b3b7f0bdb1b3">[email&#160;protected]</span></a>
   </div>
 </details>
                     </div>
                 </div>
 
                 <div class="contact-item">
-                    <div class="contact-icon">🕐</div>
+                    <div class="contact-icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg></div>
                     <div class="contact-details">
                         <h4>営業時間</h4>
                         <p>平日 9:00 - 17:00<br>（土日祝日を除く）</p>
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <section id="privacy" class="privacy-section-page">
+        <div class="section-header">
+            <div class="section-label">Privacy Policy</div>
+            <h2>プライバシーポリシー</h2>
+        </div>
+        <div class="privacy-page-content">
+            <p class="privacy-intro">イナボミ株式会社（以下「当社」といいます）は、お客様の個人情報の保護を重要な責務と認識し、以下のとおりプライバシーポリシーを定め、適切な取り扱いと保護に努めます。</p>
+            <section class="privacy-section"><h3>1. 個人情報の定義</h3><p>個人情報とは、お客様個人に関する情報であって、当該情報に含まれる氏名、生年月日、その他の記述等により特定の個人を識別できるもの、または個人識別符号が含まれるものをいいます。</p></section>
+            <section class="privacy-section"><h3>2. 個人情報の収集</h3><p>当社は、以下の目的のために必要な範囲で個人情報を収集することがあります。</p><ul><li>お問い合わせへの対応</li><li>サービスの提供・向上</li><li>契約の履行</li><li>アフターサービス・保守対応</li><li>新サービスや技術情報のご案内</li></ul></section>
+            <section class="privacy-section"><h3>3. 個人情報の利用目的</h3><p>当社は、収集した個人情報を以下の目的で利用します。</p><ul><li>DCSソフトウェア改造・技術支援サービスの提供</li><li>計装設計および関連コンサルティングの提供</li><li>お問い合わせ・ご相談への対応</li><li>契約の締結・履行・管理</li><li>請求書の発行・入金管理</li><li>各種ご案内・情報提供</li></ul></section>
+            <section class="privacy-section"><h3>4. 個人情報の第三者提供</h3><p>当社は、以下の場合を除き、お客様の同意なく個人情報を第三者に提供することはありません。</p><ul><li>法令に基づく場合</li><li>人の生命、身体または財産の保護のために必要がある場合であって、本人の同意を得ることが困難である場合</li><li>公衆衛生の向上または児童の健全な育成の推進のために特に必要がある場合であって、本人の同意を得ることが困難である場合</li><li>国の機関もしくは地方公共団体またはその委託を受けた者が法令の定める事務を遂行することに対して協力する必要がある場合であって、本人の同意を得ることにより当該事務の遂行に支障を及ぼすおそれがある場合</li></ul></section>
+            <section class="privacy-section"><h3>5. 個人情報の管理</h3><p>当社は、個人情報の正確性を保ち、これを安全に管理します。個人情報への不正アクセス、紛失、破壊、改ざん、漏洩などを防止するため、必要かつ適切な安全管理措置を講じます。</p></section>
+            <section class="privacy-section"><h3>6. 個人情報の開示・訂正・削除</h3><p>お客様は、当社が保有する自己の個人情報について、開示、訂正、追加、削除、利用停止、消去または第三者提供の停止を請求することができます。請求の際は、本人確認のため、所定の手続きをお取りいただきます。</p></section>
+            <section class="privacy-section"><h3>7. Cookie（クッキー）の使用</h3><p>当社のウェブサイトでは、サービスの向上や利便性の向上のため、Cookieを使用することがあります。Cookieの使用を希望されない場合は、ブラウザの設定により無効化することができます。</p></section>
+            <section class="privacy-section"><h3>8. SSL（Secure Socket Layer）の使用</h3><p>個人情報の入力時には、セキュリティ確保のため、これらの情報が傍受、妨害または改ざんされることを防ぐ目的でSSL技術を使用しています。</p></section>
+            <section class="privacy-section"><h3>9. プライバシーポリシーの変更</h3><p>当社は、法令の変更や事業内容の変更等に伴い、本プライバシーポリシーを変更することがあります。変更後のプライバシーポリシーは、当ウェブサイトに掲載した時点から効力を生じるものとします。</p></section>
+            <section class="privacy-section"><h3>10. お問い合わせ窓口</h3><p>個人情報の取り扱いに関するお問い合わせは、以下までご連絡ください。</p><div class="contact-box"><p><strong>イナボミ株式会社</strong></p><p>〒198-0036 東京都青梅市河辺町10丁目6-1 <span class="addr-building">トミタワー 401</span></p><p>Email: info@inabomi.com</p><p>営業時間: 平日 9:00 - 17:00（土日祝日を除く）</p></div></section>
+            <p class="privacy-date">制定日：2026年3月1日<br>イナボミ株式会社<br>代表取締役 細谷 祥（吉澤 祥）</p>
         </div>
     </section>
 
@@ -1061,9 +1193,8 @@
                     <h3>3. 個人情報の利用目的</h3>
                     <p>当社は、収集した個人情報を以下の目的で利用します。</p>
                     <ul>
-                        <li>制御システム設計・開発サービスの提供</li>
-                        <li>技術コンサルティングサービスの提供</li>
-                        <li>保守・メンテナンスサービスの提供</li>
+                        <li>DCSソフトウェア改造・技術支援サービスの提供</li>
+                        <li>計装設計および関連コンサルティングの提供</li>
                         <li>お問い合わせ・ご相談への対応</li>
                         <li>契約の締結・履行・管理</li>
                         <li>請求書の発行・入金管理</li>
@@ -1113,19 +1244,25 @@
                     <div class="contact-box">
                         <p><strong>イナボミ株式会社</strong></p>
                         <p>〒198-0036 東京都青梅市河辺町10丁目6-1 <span class="addr-building">トミタワー 401</span></p>
-                        <p>Email: info@inabomi.com</p>
+                        <p>Email: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="365f585059765f585754595b5f1855595b">[email&#160;protected]</a></p>
                         <p>営業時間: 平日 9:00 - 17:00（土日祝日を除く）</p>
                     </div>
                 </section>
 
-                <p class="privacy-date">制定日：2026年3月1日<br>イナボミ株式会社<br>代表取締役 細谷 祥</p>
+                <p class="privacy-date">制定日：2026年3月1日<br>イナボミ株式会社<br>代表取締役 細谷 祥（吉澤 祥）</p>
             </div>
         </div>
     </div>
 
-    <script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         (function() {
             'use strict';
+
+            // JS有効時はページ内プライバシーセクションを非表示にしてモーダルで表示
+            var privacyPageSection = document.getElementById('privacy');
+            if (privacyPageSection) {
+                privacyPageSection.style.display = 'none';
+            }
 
             const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
             const mobileMenu = document.querySelector('.mobile-menu');
@@ -1237,15 +1374,4 @@
                     });
                 }, observerOptions);
 
-                document.querySelectorAll('.service-card, .info-item, .contact-item, .tagline').forEach(function(el) {
-                    observer.observe(el);
-                });
-            } else {
-                document.querySelectorAll('.service-card, .info-item, .contact-item, .tagline').forEach(function(el) {
-                    el.classList.add('is-visible');
-                });
-            }
-        })();
-    </script>
-</body>
-</html>
+                document.querySelectorAll('.service-card, .info-item, .contact-item, .tagline'
