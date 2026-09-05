@@ -1,62 +1,26 @@
-name: Website review
+name: Prepare licensed website image
 on:
   push:
     branches: [design/dcs-site-20260905]
-    paths:
-      - index.html
-      - en/**
-      - assets/**
-      - privacy.html
-      - scripts/**
-      - _headers
+    paths: [.github/workflows/review-site.yml]
 permissions:
-  contents: write
-concurrency:
-  group: inabomi-design-review
-  cancel-in-progress: true
+  contents: read
 jobs:
-  review:
+  image:
     if: github.repository == 'shotomoda0526-hue/inabomi-site' && github.ref == 'refs/heads/design/dcs-site-20260905'
     runs-on: ubuntu-latest
-    timeout-minutes: 12
+    timeout-minutes: 4
     steps:
-      - uses: actions/checkout@v4
+      - name: Retrieve CC0 image and source records
+        run: |
+          mkdir -p licensed-image
+          curl --fail --location --retry 2 --max-time 45 --user-agent 'INABOMI website image review' 'https://upload.wikimedia.org/wikipedia/commons/e/e7/Refinery_factory_in_Kyrgyzstan.jpg' -o licensed-image/plant-source.jpg
+          curl --fail --location --max-time 45 --user-agent 'INABOMI website image review' 'https://commons.wikimedia.org/wiki/File:Refinery_factory_in_Kyrgyzstan.jpg' -o licensed-image/source-page.html
+          curl --fail --location --max-time 45 'https://creativecommons.org/publicdomain/zero/1.0/legalcode.en' -o licensed-image/cc0-license.html
+          sha256sum licensed-image/plant-source.jpg > licensed-image/SHA256SUMS.txt
+      - uses: actions/upload-artifact@v4
         with:
-          ref: design/dcs-site-20260905
-      - name: Install review tools
-        run: |
-          python -m pip install --quiet Pillow playwright beautifulsoup4
-          python -m playwright install --with-deps chromium
-      - name: Prepare licensed photograph and local preview files
-        run: python scripts/prepare.py
-      - name: Save prepared assets on review branch only
-        run: |
-          git config user.name 'Website review build'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add assets/plant.jpg assets/plant-small.jpg assets/ogp.jpg downloads/
-          if ! git diff --cached --quiet; then
-            git commit -m 'Prepare licensed site assets and portable previews'
-            git push origin HEAD:design/dcs-site-20260905
-          fi
-      - name: Browser and content checks
-        run: python scripts/check.py
-      - name: Save screenshots and test record on review branch only
-        if: always()
-        run: |
-          if test -d review; then
-            git add review/
-            if ! git diff --cached --quiet; then
-              git commit -m 'Record website browser checks'
-              git push origin HEAD:design/dcs-site-20260905
-            fi
-          fi
-      - name: Upload portable website and review files
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: inabomi-website-complete
-          path: |
-            downloads/
-            review/
+          name: inabomi-licensed-image
+          path: licensed-image/
           if-no-files-found: error
-          retention-days: 30
+          retention-days: 7
